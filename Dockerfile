@@ -1,5 +1,6 @@
 FROM nginx:alpine as build
 
+LABEL maintainer "Adrian Freisinger <afreisinger@gmail.com>"
 
 ARG HUGO_VERSION="0.88.1"
 
