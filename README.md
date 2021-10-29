@@ -62,6 +62,19 @@ alias hugo-server='docker run --rm -it -v $PWD:/src -p 1313:1313 -u hugo afreisi
 
 Now, you can use `hugo help`, `hugo new foo/bar.md`, `hugo-server -w`, etc.
 
+## A simple and clean blog example [Coder theme](https://themes.gohugo.io/themes/hugo-coder/) for [Hugo](https://gohugo.io/)
+
+```text
+hugo new site johndoe
+cd johndoe
+git init
+git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder
+hugo --themesDir=../.. --source=themes/hugo-coder/exampleSite
+hugo-server -w --themesDir=../.. --source=themes/hugo-coder/exampleSite
+```
+
+Remember, then open [`http://localhost:1313/`](http://localhost:1313/) in your browser.
+
 ## Users
 
 By default, this docker image run as the root user. This makes it easy to use as base image for other Dockerfiles (switching back and forth adds extra layers and is against the current [best practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#user) advised by Docker). Most (all official?) base images leave the default user as root.
